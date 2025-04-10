@@ -1,0 +1,71 @@
+:root {
+    --red: #AE3F3D;
+    --black: #1A1A1D;
+    --white: #FFFFFF;
+    --light-gray: #F1F1F1;
+    --dark-gray: #D7D7D6;
+  }
+  @font-face {
+    font-family: 'archiveregular'; /* Replace with your font name */
+    src: url('fonts/ArchiveRegular/ArchiveRegular.ttf') format('truetype'), 
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+  body > footer {
+    font-size: 1.1rem;
+    color: var(--white);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 32px clamp(50px, 10vw, 200px) 25px;
+    box-sizing: border-box;
+    gap: 170px;
+    z-index: 9;
+    position: relative;
+    background-color: var(--black);
+    height: auto;
+  }
+  body > footer .copyright {
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    text-wrap: nowrap;
+  }
+  body > footer .copyright .fa-copyright {
+    font-size: 3rem;
+    margin-right: 1rem;
+    color: rgb(255, 255, 255);
+  }
+  body > footer .copyright a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+  }
+  body > footer .copyright .author {
+    color: rgb(255, 255, 255);
+  }
+  body > footer .copyright .fa-linkedin {
+    font-size: 1.6rem;
+    margin-left: 1rem;
+    color: #FFFFFF;
+    transition: 150ms ease-in-out;
+  }
+  body > footer .copyright .fa-linkedin:hover, body > footer .copyright .author:hover + .fa-linkedin {
+    transform: scale(1.15);
+    color: #2867B2;
+  }
+  body > footer .approval {
+    text-align: center;
+  }
+
+  @media (max-width: 1150px) {
+    body > footer {
+      flex-direction: column-reverse;
+      padding: 21px clamp(15px, 8vw, 200px);
+      gap: 21px;
+    }
+    body > footer .copyright {
+      margin-right: 0;
+    }
+  }

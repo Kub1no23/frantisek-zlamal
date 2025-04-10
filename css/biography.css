@@ -1,0 +1,337 @@
+:root {
+    --red: #AE3F3D;
+    --black: #1A1A1D;
+    --white: #FFFFFF;
+    --light-gray: #F1F1F1;
+    --dark-gray: #D7D7D6;
+  }
+
+body {
+    height: 100dvh;
+    width: 100%;
+}
+
+main.container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-color: var(--light-gray);
+    transition: background-color 1s ease-in-out;
+}
+.container #img-scroller {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    overflow-x: hidden;
+    align-items: center;
+    justify-items: center;
+}
+#img-scroller > div {
+    border-radius: 40px;
+    height: 90vh;
+    width: 90vw;
+    background-color: var(--black);
+    box-shadow: 0 0 20px 8px rgba(0, 0, 0, 0.4);
+    color: #e9d6d6;
+}
+#img-scroller > div:nth-child(1) {
+    background-image: url(../images/gallery/fz7.JPG);
+    background-size: 583px;
+    background-position: 18%;
+    background-repeat: no-repeat;
+}
+#img-scroller > div:nth-child(2) {
+    background-image: url(../images/gallery/fz7.JPG);
+    background-size: 30%;
+    background-position: 95%;
+    background-repeat: no-repeat;
+}
+#img-scroller > div:nth-child(3) {
+    background-image: url(../images/gallery/slavka10.JPG);
+    background-size: 37%;
+    background-position: 11%;
+    background-repeat: no-repeat;
+}
+#img-scroller > div:nth-child(4) {
+    background-image: url(../images/gallery/sejk2.JPG);
+    background-size: 48%;
+    background-position: 95%;
+    background-repeat: no-repeat;
+}
+
+.container #text-scroller {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-rows: 100vh;
+    overflow-y: scroll;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: y mandatory;
+}
+
+.container #text-scroller > div {
+    scroll-snap-align: center;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+#text-scroller .text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: justify;
+}
+#text-scroller .text-container {
+    position: absolute;
+    translate: -50% -50%;
+    box-sizing: border-box;
+    padding: clamp(15px, 3vw, 40px);
+    width: 43%; /*43%*/
+    height: fit-content;
+    border: var(--dark-gray) 2px solid;
+    border-radius: 30px;
+    backdrop-filter: blur(25px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#text-scroller > div:nth-child(odd) .text-container {
+    background-image: linear-gradient(120deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.15));
+    top: 50%;
+    left: 60%;
+}
+#text-scroller > div:nth-child(even) .text-container {
+    top: 50%;
+    left: 40%;
+    background-image: linear-gradient(120deg, rgba(0, 0, 0, 0.15), rgba(255, 255, 255, 0.2));
+}
+#text-scroller > div:nth-child(1) .text-container {
+    width: 45%;
+}
+#text-scroller > div:nth-child(3) .text-container {
+    width: 50%;
+}
+#text-scroller > div:nth-child(4) .text-container {
+    left: 30%;
+}
+#text-scroller .text-container h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    position: absolute;
+    top: -43px;
+    right: 0px;
+    color: transparent;
+    white-space: nowrap;
+    -webkit-text-stroke: 1px var(--white);
+}
+#text-scroller > div:nth-child(4) .text-container h2 {
+    right: auto;
+    left: -15px;
+}
+#text-scroller .text-container h2::after {
+    white-space: nowrap;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+    color: var(--white);
+    border-right: 5px solid var(--white);
+    transition: 800ms ease-in-out;
+}
+#text-scroller div:nth-child(1) .text-container h2::after {
+    content: 'Začátky s fotbalem';
+}
+#text-scroller div:nth-child(2) .text-container h2::after {
+    content: 'Vojna a cesta do profi fotbalu';
+}
+#text-scroller div:nth-child(3) .text-container h2::after {
+    content: 'Slavia Praha – vrchol kariéry';
+}
+#text-scroller div:nth-child(4) .text-container h2::after {
+    content: 'Reprezentace a mezinárodní zkušenosti';
+}
+#text-scroller .text-container h2.modify1-after::after {
+    width: 100%;
+}
+#text-scroller .text-container h2.modify2-after::after {
+    border-right: none;
+}
+#text-scroller .text-container p {
+    font-size: clamp(1.05rem, 1.15vw, 1.2rem);
+    font-weight: 400;
+    color: var(--light-gray);
+}
+#text-scroller .text-container h3 {
+    font-size: clamp(1.2rem, 1.4vw, 1.5rem);
+    font-weight: 600;
+    color: var(--white);
+}
+#text-scroller .text-container p:first-of-type::first-letter {
+    font-size: clamp(1.4rem, 1.7vw, 1.8rem);
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--white);
+}
+
+@media (max-width: 1642px) {
+    #text-scroller .text-container {
+        transition: opacity 800ms ease-in-out;
+    }
+    #text-scroller .text-container:hover {
+        opacity: 0;
+    }
+    #text-scroller .text-container h2 {
+        font-size: 1.8rem;
+        top: -30px;
+        right: 50%;
+        translate: 50% 0;
+    }
+    #text-scroller > div:nth-child(4) .text-container h2 {
+        right: 50%;
+        translate: 50% 0;
+        left: auto;
+    }
+    #img-scroller > div:nth-child(1) {
+        background-size: 30%;
+        background-position: 15%;
+    }
+    #img-scroller > div:nth-child(2) {
+        background-size: 30%;
+        background-position: 87%;
+    }
+    #img-scroller > div:nth-child(3) {
+        background-size: 40%;
+        background-position: 10%;
+    }
+    #img-scroller > div:nth-child(4) {
+        background-size: 50%;
+        background-position: 90%;
+    }
+}
+@media (max-width: 1100px) {
+    #text-scroller > div:nth-child(1) .text-container {
+        width: 70%;
+    }
+    #text-scroller > div:nth-child(2) .text-container {
+        width: 70%;
+    }
+    #text-scroller > div:nth-child(3) .text-container {
+        width: 75%;
+    }
+    #text-scroller > div:nth-child(4) .text-container {
+        width: 75%;
+    }
+    #text-scroller > div:nth-child(odd) .text-container {
+        top: 50%;
+        left: 50%;
+    }
+    #text-scroller > div:nth-child(even) .text-container {
+        top: 50%;
+        left: 50%;
+    }
+    #img-scroller > div:nth-child(1) {
+        background-position: 50%;
+    }
+    #img-scroller > div:nth-child(2) {
+        background-position: 50%;
+    }
+    #img-scroller > div:nth-child(3) {
+        background-position: 50%;
+    }
+    #img-scroller > div:nth-child(4) {
+        background-position: 50%;
+    }
+}
+@media (max-width: 837px) {
+    #img-scroller > div:nth-child(1) {
+        background-size: 40%;
+    }
+    #img-scroller > div:nth-child(2) {
+        background-size: 40%;
+    }
+    #img-scroller > div:nth-child(3) {
+        background-size: 60%;
+    }
+    #img-scroller > div:nth-child(4) {
+        background-size: 70%;
+    }
+}
+@media (max-width: 697px) {
+    #img-scroller > div {
+        border-radius: 25px;
+        height: 95vh;
+        width: 95vw;
+    }
+    #text-scroller > div:nth-child(1) .text-container, #text-scroller > div:nth-child(2) .text-container, #text-scroller > div:nth-child(3) .text-container, #text-scroller > div:nth-child(4) .text-container {
+        width: 80%;
+    }
+    #text-scroller .text-container h2 {
+        font-size: 1.5rem;
+        top: -30px;
+    }
+}
+@media (max-width: 600px) {
+    #text-scroller .text-container h2 {
+        font-size: 1.35rem;
+        top: -30px;
+        font-weight: 600;
+        -webkit-text-stroke: 0;
+    }
+    #text-scroller > div:nth-child(3) .text-container p:nth-of-type(4) {
+        display: none;
+    }
+    #text-scroller > div:nth-child(1) .text-container, #text-scroller > div:nth-child(2) .text-container, #text-scroller > div:nth-child(3) .text-container, #text-scroller > div:nth-child(4) .text-container {
+        width: 90%;
+    }
+}
+@media (max-width: 500px) {
+    #text-scroller > div:nth-child(1) .text-container p span {
+        display: none;
+    }
+}
+@media (max-width: 450px) {
+    #img-scroller > div {
+        height: 98vh;
+        width: 98vw;
+        padding-top: 30px;
+        box-sizing: border-box;
+    }
+    #text-scroller > div:nth-child(1) .text-container, #text-scroller > div:nth-child(2) .text-container, #text-scroller > div:nth-child(3) .text-container, #text-scroller > div:nth-child(4) .text-container {
+        width: 95%;
+    }
+    #text-scroller .text-container h2 {
+        font-size: 1.15rem;
+        top: -25px;
+        font-weight: 600;
+        -webkit-text-stroke: 0;
+    }
+}
+@media (max-width: 374px) {
+    #text-scroller .text-container {
+        gap: 4px;
+        text-align: justify;
+    }
+}
+@media (max-width: 340px) {
+    #text-scroller .text-container h2 {
+        font-size: 1rem;
+        top: -20px;
+    }
+    body #open-sidebar {
+        top: 10px;
+        right: 10px;
+    }
+}
