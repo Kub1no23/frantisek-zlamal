@@ -7,7 +7,7 @@
   }
 
 body {
-    height: 100dvh;
+    height: 100svh;
     width: 100%;
 }
 
@@ -22,7 +22,7 @@ main.container {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100dvh;
+    height: 100svh;
     width: 100vw;
     display: grid;
     grid-auto-flow: column;
@@ -33,7 +33,7 @@ main.container {
 }
 #img-scroller > div {
     border-radius: 40px;
-    height: 90dvh;
+    height: 90svh;
     width: 90vw;
     background-color: var(--black);
     box-shadow: 0 0 20px 8px rgba(0, 0, 0, 0.4);
@@ -68,7 +68,7 @@ main.container {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100dvh;
+    height: 100svh;
     width: 100vw;
     display: grid;
     grid-auto-flow: row;
@@ -81,7 +81,7 @@ main.container {
 .container #text-scroller > div {
     scroll-snap-align: center;
     width: 100vw;
-    height: 100dvh;
+    height: 100svh;
     position: relative;
 }
 #text-scroller .text-container {
@@ -272,7 +272,7 @@ main.container {
 @media (max-width: 697px) {
     #img-scroller > div {
         border-radius: 25px;
-        height: 95vh;
+        height: 95svh;
         width: 95vw;
     }
     #text-scroller > div:nth-child(1) .text-container, #text-scroller > div:nth-child(2) .text-container, #text-scroller > div:nth-child(3) .text-container, #text-scroller > div:nth-child(4) .text-container {
@@ -304,7 +304,7 @@ main.container {
 }
 @media (max-width: 450px) {
     #img-scroller > div {
-        height: 98dvh;
+        height: 98svh;
         width: 98vw;
         padding-top: 30px;
         box-sizing: border-box;
