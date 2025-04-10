@@ -272,8 +272,8 @@ main.container {
 @media (max-width: 697px) {
     #img-scroller > div {
         border-radius: 25px;
-        height: 95svh;
-        width: 95vw;
+        height: 95%;
+        width: 95%;
     }
     #text-scroller > div:nth-child(1) .text-container, #text-scroller > div:nth-child(2) .text-container, #text-scroller > div:nth-child(3) .text-container, #text-scroller > div:nth-child(4) .text-container {
         width: 80%;
@@ -304,8 +304,8 @@ main.container {
 }
 @media (max-width: 450px) {
     #img-scroller > div {
-        height: 98svh;
-        width: 98vw;
+        height: 98%;
+        width: 98%;
         padding-top: 30px;
         box-sizing: border-box;
     }
