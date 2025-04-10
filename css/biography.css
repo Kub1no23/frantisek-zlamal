@@ -22,7 +22,7 @@ main.container {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 100dvh;
     width: 100vw;
     display: grid;
     grid-auto-flow: column;
@@ -33,7 +33,7 @@ main.container {
 }
 #img-scroller > div {
     border-radius: 40px;
-    height: 90vh;
+    height: 90dvh;
     width: 90vw;
     background-color: var(--black);
     box-shadow: 0 0 20px 8px rgba(0, 0, 0, 0.4);
@@ -68,7 +68,7 @@ main.container {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 100dvh;
     width: 100vw;
     display: grid;
     grid-auto-flow: row;
@@ -81,7 +81,7 @@ main.container {
 .container #text-scroller > div {
     scroll-snap-align: center;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     position: relative;
 }
 #text-scroller .text-container {
@@ -304,7 +304,7 @@ main.container {
 }
 @media (max-width: 450px) {
     #img-scroller > div {
-        height: 98vh;
+        height: 98dvh;
         width: 98vw;
         padding-top: 30px;
         box-sizing: border-box;
