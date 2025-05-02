@@ -7,13 +7,14 @@
   }
 
 body {
-    height: 100svh;
+    height: 100dvh;
     width: 100%;
+    max-width: 1920px;
 }
 
 main.container {
     height: 100%;
-    width: 100%;
+    width: 100vw;
     position: relative;
     background-color: var(--light-gray);
     transition: background-color 1s ease-in-out;
@@ -22,7 +23,7 @@ main.container {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100svh;
+    height: 100vh;
     width: 100vw;
     display: grid;
     grid-auto-flow: column;
@@ -33,11 +34,12 @@ main.container {
 }
 #img-scroller > div {
     border-radius: 40px;
-    height: 90svh;
+    height: 90vh;
     width: 90vw;
     background-color: var(--black);
     box-shadow: 0 0 20px 8px rgba(0, 0, 0, 0.4);
     color: #e9d6d6;
+    max-width: 1920px;
 }
 #img-scroller > div:nth-child(1) {
     background-image: url(../images/gallery/fz7.JPG);
@@ -63,12 +65,18 @@ main.container {
     background-position: 95%;
     background-repeat: no-repeat;
 }
+#img-scroller > div:nth-child(5) {
+    background-image: url(../images/gallery/konec.jpg);
+    background-size: 30%;
+    background-position: 80%;
+    background-repeat: no-repeat;
+}
 
 .container #text-scroller {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100svh;
+    height: 100vh;
     width: 100vw;
     display: grid;
     grid-auto-flow: row;
@@ -76,13 +84,15 @@ main.container {
     overflow-y: scroll;
     overscroll-behavior-inline: contain;
     scroll-snap-type: y mandatory;
+    overflow-x: hidden;
 }
 
 .container #text-scroller > div {
     scroll-snap-align: center;
     width: 100vw;
-    height: 100svh;
+    height: 100vh;
     position: relative;
+    
 }
 #text-scroller .text-container {
     display: flex;
@@ -117,12 +127,23 @@ main.container {
 }
 #text-scroller > div:nth-child(1) .text-container {
     width: 45%;
+    max-width: 950px;
+}
+#text-scroller > div:nth-child(2) .text-container {
+    max-width: 950px;
 }
 #text-scroller > div:nth-child(3) .text-container {
     width: 50%;
+    max-width: 950px;
 }
 #text-scroller > div:nth-child(4) .text-container {
     left: 30%;
+    max-width: 876px;
+}
+#text-scroller > div:nth-child(5) .text-container {
+    width: 40%;
+    left: 37%;
+    max-width: 800px;
 }
 #text-scroller .text-container h2 {
     font-size: 2.5rem;
@@ -162,6 +183,9 @@ main.container {
 }
 #text-scroller div:nth-child(4) .text-container h2::after {
     content: 'Reprezentace a mezinárodní zkušenosti';
+}
+#text-scroller div:nth-child(5) .text-container h2::after {
+    content: 'Závěr kariéry a rodinné zázemí';
 }
 #text-scroller .text-container h2.modify1-after::after {
     width: 100%;
@@ -254,6 +278,9 @@ main.container {
     #img-scroller > div:nth-child(4) {
         background-position: 50%;
     }
+    #img-scroller > div:nth-child(5) {
+        background-position: 50%;
+    }
 }
 @media (max-width: 837px) {
     #img-scroller > div:nth-child(1) {
@@ -270,10 +297,13 @@ main.container {
     }
 }
 @media (max-width: 697px) {
+    #text-scroller > div:nth-child(5) .text-container {
+        width: 75%;
+    }
     #img-scroller > div {
         border-radius: 25px;
-        height: 95%;
-        width: 95%;
+        height: 95vh;
+        width: 95vw;
     }
     #text-scroller > div:nth-child(1) .text-container, #text-scroller > div:nth-child(2) .text-container, #text-scroller > div:nth-child(3) .text-container, #text-scroller > div:nth-child(4) .text-container {
         width: 80%;
@@ -301,11 +331,14 @@ main.container {
     #text-scroller > div:nth-child(1) .text-container p span {
         display: none;
     }
+    #img-scroller > div:nth-child(5) {
+        background-size: 40%;
+    }
 }
 @media (max-width: 450px) {
     #img-scroller > div {
-        height: 98%;
-        width: 98%;
+        height: 98vh;
+        width: 98vw;
         padding-top: 30px;
         box-sizing: border-box;
     }
@@ -317,6 +350,24 @@ main.container {
         top: -25px;
         font-weight: 600;
         -webkit-text-stroke: 0;
+    }
+    #img-scroller > div {
+        height: 100%;
+        width: 100%;
+        border-radius: 0;
+    }
+    .container #img-scroller {
+        grid-auto-columns: 100%;
+        grid-auto-flow: row;
+        grid-auto-rows: 110vh;
+        overflow-y: scroll;
+    }
+    .container #text-scroller {
+        grid-auto-rows: 110vh;
+        scroll-snap-type: none;
+    }
+    #img-scroller > div {
+        box-shadow: none;
     }
 }
 @media (max-width: 374px) {

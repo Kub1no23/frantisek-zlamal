@@ -4,9 +4,13 @@ const paragraphs = textScroller.querySelectorAll(':scope > div');
 const textContainers = document.querySelectorAll(".text-container");
 
 const syncScroll = () => {
-    const ratio = window.innerWidth / window.visualViewport.height;
-    imgScroller.scrollLeft = Math.round(textScroller.scrollTop * ratio);
-}
+    if (window.innerWidth > 450) {
+        const ratio = window.innerWidth / window.innerHeight;
+        imgScroller.scrollLeft = Math.round(textScroller.scrollTop * ratio);
+    } else {
+        imgScroller.scrollTop = textScroller.scrollTop;
+    }
+};
 
 const headingChange = () => {
     paragraphs.forEach((paragraph, index) => {
